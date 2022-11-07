@@ -1,5 +1,5 @@
 /// meta : {"code":200,"status":"success","message":"List Categories"}
-/// data : [{"id":1,"name":"Petra Koelpin","gambar":"ini gambar","created_at":"2022-11-03T14:34:49.000000Z","updated_at":"2022-11-03T14:34:49.000000Z"},{"id":2,"name":"Dr. William Feest V","gambar":"ini gambar","created_at":"2022-11-03T14:34:49.000000Z","updated_at":"2022-11-03T14:34:49.000000Z"},{"id":3,"name":"Elyse Veum","gambar":"ini gambar","created_at":"2022-11-03T14:34:49.000000Z","updated_at":"2022-11-03T14:34:49.000000Z"},{"id":4,"name":"Wava Rath","gambar":"ini gambar","created_at":"2022-11-03T14:34:49.000000Z","updated_at":"2022-11-03T14:34:49.000000Z"},{"id":5,"name":"Travon Bogisich III","gambar":"ini gambar","created_at":"2022-11-03T14:34:49.000000Z","updated_at":"2022-11-03T14:34:49.000000Z"},{"id":6,"name":"Marlen VonRueden","gambar":"ini gambar","created_at":"2022-11-03T14:34:49.000000Z","updated_at":"2022-11-03T14:34:49.000000Z"},{"id":7,"name":"Alan Corwin","gambar":"ini gambar","created_at":"2022-11-03T14:34:49.000000Z","updated_at":"2022-11-03T14:34:49.000000Z"},{"id":8,"name":"Vaughn Bernier","gambar":"ini gambar","created_at":"2022-11-03T14:34:49.000000Z","updated_at":"2022-11-03T14:34:49.000000Z"},{"id":9,"name":"Tiana Olson","gambar":"ini gambar","created_at":"2022-11-03T14:34:49.000000Z","updated_at":"2022-11-03T14:34:49.000000Z"},{"id":10,"name":"Juwan Baumbach","gambar":"ini gambar","created_at":"2022-11-03T14:34:49.000000Z","updated_at":"2022-11-03T14:34:49.000000Z"}]
+/// data : [{"nama":"qui","gambar":"https://via.placeholder.com/620x480.png/0044dd?text=vitae"},{"nama":"ut","gambar":"https://via.placeholder.com/620x480.png/00ffee?text=vero"},{"nama":"quod","gambar":"https://via.placeholder.com/620x480.png/006600?text=enim"},{"nama":"aut","gambar":"https://via.placeholder.com/620x480.png/0099cc?text=magnam"},{"nama":"quia","gambar":"https://via.placeholder.com/620x480.png/00ff44?text=aliquam"},{"nama":"ut","gambar":"https://via.placeholder.com/620x480.png/0000bb?text=soluta"},{"nama":"aut","gambar":"https://via.placeholder.com/620x480.png/002255?text=saepe"},{"nama":"consequatur","gambar":"https://via.placeholder.com/620x480.png/0022aa?text=tempora"},{"nama":"ullam","gambar":"https://via.placeholder.com/620x480.png/00ddee?text=sint"},{"nama":"eaque","gambar":"https://via.placeholder.com/620x480.png/0022aa?text=ut"}]
 
 class CategoryModel {
   CategoryModel({
@@ -41,62 +41,35 @@ CategoryModel copyWith({  Meta? meta,
 
 }
 
-/// id : 1
-/// name : "Petra Koelpin"
-/// gambar : "ini gambar"
-/// created_at : "2022-11-03T14:34:49.000000Z"
-/// updated_at : "2022-11-03T14:34:49.000000Z"
+/// nama : "qui"
+/// gambar : "https://via.placeholder.com/620x480.png/0044dd?text=vitae"
 
 class Data {
   Data({
-      num? id, 
-      String? name, 
-      String? gambar, 
-      String? createdAt, 
-      String? updatedAt,}){
-    _id = id;
-    _name = name;
+      String? nama, 
+      String? gambar,}){
+    _nama = nama;
     _gambar = gambar;
-    _createdAt = createdAt;
-    _updatedAt = updatedAt;
 }
 
   Data.fromJson(dynamic json) {
-    _id = json['id'];
-    _name = json['name'];
+    _nama = json['nama'];
     _gambar = json['gambar'];
-    _createdAt = json['created_at'];
-    _updatedAt = json['updated_at'];
   }
-  num? _id;
-  String? _name;
+  String? _nama;
   String? _gambar;
-  String? _createdAt;
-  String? _updatedAt;
-Data copyWith({  num? id,
-  String? name,
+Data copyWith({  String? nama,
   String? gambar,
-  String? createdAt,
-  String? updatedAt,
-}) => Data(  id: id ?? _id,
-  name: name ?? _name,
+}) => Data(  nama: nama ?? _nama,
   gambar: gambar ?? _gambar,
-  createdAt: createdAt ?? _createdAt,
-  updatedAt: updatedAt ?? _updatedAt,
 );
-  num? get id => _id;
-  String? get name => _name;
+  String? get nama => _nama;
   String? get gambar => _gambar;
-  String? get createdAt => _createdAt;
-  String? get updatedAt => _updatedAt;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
-    map['id'] = _id;
-    map['name'] = _name;
+    map['nama'] = _nama;
     map['gambar'] = _gambar;
-    map['created_at'] = _createdAt;
-    map['updated_at'] = _updatedAt;
     return map;
   }
 

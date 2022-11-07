@@ -37,7 +37,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
             itemCount: categoryModel.data?.length,
             itemBuilder: (context, index) {
               return ListTile(
-                title: Text(categoryModel.data?[index].name ?? "-") ,
+                title: Text(categoryModel.data?[index].nama ?? "-") ,
               );
             }
     ): Center(
@@ -48,7 +48,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
   void getCategory() async {
     try {
       print('ok');
-      print('hjjvvfgfvg${categoryModel.data?[0].name}');
+      print('hjjvvfgfvg${categoryModel.data?[0].nama}');
 
       var res = await dio.get(
         "/p/category",
